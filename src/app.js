@@ -8,6 +8,7 @@ const publicDirectoryPath = path.join(__dirname, '..', 'public')
 const viewPath = path.join(__dirname, '..', 'templates', 'views')
 const partialsPath = path.join(__dirname, '..', 'templates', 'partials')
 const app = express()
+const port = process.env.PORT || 5000
 
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
@@ -80,6 +81,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen('5000', () => {
+app.listen(port, () => {
     console.log('Server started on port 5000')
 })
